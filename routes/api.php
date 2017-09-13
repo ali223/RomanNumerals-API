@@ -13,6 +13,9 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
+Route::get('/conversions', 'ConversionsController@index')->name('conversions.index');
+
+Route::get('/conversions/popular', 'ConversionsController@popular')->name('conversions.popular');
+
+Route::post('/conversions', 'ConversionsController@store')->name('conversions.store');
+
