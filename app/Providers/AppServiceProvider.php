@@ -23,6 +23,19 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(\App\IntegerConversionInterface::class,
+                        \App\IntegerConversion::class
+                    );
+
+        $this->app->bind(
+            \League\Fractal\Serializer\Serializer::class, 
+            \League\Fractal\Serializer\JsonApiSerializer::class
+            );        
+
+        $this->app->bind(
+            \League\Fractal\TransformerAbstract::class,
+            \App\Transformers\ConversionTransformer::class
+            );        
+
     }
 }

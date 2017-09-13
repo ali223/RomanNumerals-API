@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Conversion extends Model
 {
-    //
+    public $fillable = ['decimal', 'roman'];
 }
