@@ -15,8 +15,9 @@ class CreateConversionsTable extends Migration
     {
         Schema::create('conversions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('decimal');
+            $table->integer('decimal')->unsigned()->unique();
             $table->string('roman', 20);
+            $table->integer('times')->unsigned();
             $table->timestamps();
         });
     }

@@ -12,6 +12,7 @@ class ConversionTransformer extends TransformerAbstract
 			'id' => $conversion->id,
 			'decimal' => $conversion->decimal,
 			'roman' => $conversion->roman,
+			'times' => $conversion->times,
 			'date' => $conversion->created_at
 								->toDateTimeString()
 		];
